@@ -40,7 +40,11 @@ public class Tile{
 
     @Override
     public String toString() {
-        return location + " ";
+        if (piece == null) {
+            return location + " ";
+        } else {
+            return " " + piece.getClass().getSimpleName().substring(0, 1) + " ";
+        }
     }
 
 }

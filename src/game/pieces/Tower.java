@@ -23,12 +23,21 @@ public class Tower extends Piece {
         return result;
     }
 
+    public Tower(Tile position, String color) {
+        super(position, color);
+    }
+
     private List<Tile> checkUp(Board board, String column, int row) {
         List<Tile> result = new ArrayList<Tile>();
         for (int i = row + 1; i <= 8; i++) {
             Tile temp = board.getTile(column + i);
-            if (temp.getPiece() == null  || !temp.getPiece().getColor().equals(color)) {
+            if (temp.getPiece() == null) {
                 result.add(temp);
+            } else if (!temp.getPiece().getColor().equals(color)){
+                result.add(temp);
+                break;
+            } else {
+                break;
             }
         }
         return result;
@@ -36,10 +45,15 @@ public class Tower extends Piece {
 
     private List<Tile> checkDown(Board board, String column, int row) {
         List<Tile> result = new ArrayList<Tile>();
-        for (int i = row - 1; i >= 0; i--) {
+        for (int i = row - 1; i >= 1; i--) {
             Tile temp = board.getTile(column + i);
-            if(temp.getPiece() == null || !temp.getPiece().getColor().equals(color)) {
+            if (temp.getPiece() == null) {
                 result.add(temp);
+            } else if (!temp.getPiece().getColor().equals(color)){
+                result.add(temp);
+                break;
+            } else {
+                break;
             }
         }
         return result;
@@ -48,10 +62,15 @@ public class Tower extends Piece {
     private List<Tile> checkLeft(Board board, String column, int row) {
         List<Tile> result = new ArrayList<Tile>();
         int columnIndex = Arrays.asList(board.getColumns()).indexOf(column);
-        for(int i = columnIndex -1; i >= 0; i--) {
+        for(int i = columnIndex -1; i >= 1; i--) {
             Tile temp = board.getTile(board.getColumns()[i] + row);
-            if(temp.getPiece() == null || !temp.getPiece().getColor().equals(color)) {
+            if (temp.getPiece() == null) {
                 result.add(temp);
+            } else if (!temp.getPiece().getColor().equals(color)){
+                result.add(temp);
+                break;
+            } else {
+                break;
             }
         }
         return result;
@@ -62,8 +81,13 @@ public class Tower extends Piece {
         int columnIndex = Arrays.asList(board.getColumns()).indexOf(column);
         for(int i = columnIndex +1; i <= 8; i++) {
             Tile temp = board.getTile(board.getColumns()[i] + row);
-            if(temp.getPiece() == null || !temp.getPiece().getColor().equals(color)) {
+            if (temp.getPiece() == null) {
                 result.add(temp);
+            } else if (!temp.getPiece().getColor().equals(color)){
+                result.add(temp);
+                break;
+            } else {
+                break;
             }
         }
         return result;

@@ -13,6 +13,10 @@ import java.util.List;
 public class Pawn extends Piece {
 
 
+    public Pawn(Tile position, String color) {
+        super(position, color);
+    }
+
     @Override
     public List<Tile> getMoves(Board board) {
         List<Tile> result = new ArrayList<Tile>();

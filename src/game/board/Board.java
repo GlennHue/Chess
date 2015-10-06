@@ -21,7 +21,7 @@ public class Board {
         Tile result = null;
         for(Tile[] items : tiles) {
             for(Tile tile : items) {
-                if(tile.toString().equals(position)) {
+                if(tile.toString().trim().equals(position)) {
                     result = tile;
                 }
             }
