@@ -34,14 +34,14 @@ public class Game {
             Piece wPiece = null;
             Piece bPiece = null;
             if(i == 0 || i == 7) {
-                wPiece = new Tower(wTemp, "White");
-                bPiece = new Tower(wTemp, "Black");
-            } else if(i == 1 || i == 6) {
-                wPiece = new Knight(wTemp, "White");
-                bPiece = new Knight(wTemp, "Black");
-            } else if(i == 2 || i == 5) {
                 wPiece = new Rook(wTemp, "White");
                 bPiece = new Rook(bTemp, "Black");
+            } else if(i == 1 || i == 6) {
+                wPiece = new Knight(wTemp, "White");
+                bPiece = new Knight(bTemp, "Black");
+            } else if(i == 2 || i == 5) {
+                wPiece = new Bishop(wTemp, "White");
+                bPiece = new Bishop(bTemp, "Black");
             } else if (i == 3) {
                 wPiece = new Queen(wTemp, "White");
                 bPiece = new Queen(bTemp, "Black");
